@@ -6,5 +6,8 @@
 
 [x] connect to the postgres engine using psql
 
-[x] Create a DB connection in: Python (main.py), GO (main.go), NodeJS (index.js)
+[ ] Create a DB connection in: Python (main.py), GO (main.go), NodeJS (index.js)
  
+[ ] Using gorm > create a table called users with some fields
+
+[ ] Apply the table in your docker instance
