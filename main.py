@@ -1,32 +1,11 @@
 import psycopg2
 
-from config import config
+conn = psycopg2.connect("user=postgres password=pass host=localhost port=5432")
 
-def connect():
-    connection = None
-    try:
-        params = config()
-        print('Connecting to the postgresql database ...')
-        connection = psycopg2.connect(**params)
-
-        #create a cursor
-        crsr = connection.cursor()
-        print('postgresql database version:')
-        crsr.execute('SELECT  version()')
-        db_version = crsr.fetchone()
-        print(db_version)
-        crsr.close()
-    except(Exception, psycopg2.DatabaseError) as error:
-        print(error)
-    finally:
-        if connection is not None:
-            connection.close()
-            print('Database connection terminate.')
-
-if __name__ == "__main__":
-    connect()
-
-
-
-
+#Below I used a temporary memory AKA a cursor to check the version of the psql
+'''crsr = conn.cursor()
+crsr.execute('SELECT version();')
+result = crsr.fetchone()
+print(result)
+print(type(crsr))'''
 
