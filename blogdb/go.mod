@@ -1,4 +1,4 @@
-module module1
+module blogdb
 
 go 1.21.6
 
